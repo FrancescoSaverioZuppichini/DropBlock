@@ -40,7 +40,7 @@ axs[1].imshow(to_plot(x_drop), cmap='gray')
 
 
     
-![png](https://github.com/FrancescoSaverioZuppichini/DropBlock/blob/main/images/output_1_1?raw=true)
+![png](https://github.com/FrancescoSaverioZuppichini/DropBlock/blob/main/images/output_1_1.png?raw=true)
     
 
 
@@ -107,7 +107,7 @@ axs[1].imshow(f_drop_l.squeeze().numpy())
 
 
     
-![png](https://github.com/FrancescoSaverioZuppichini/DropBlock/blob/main/images/output_4_1?raw=true)
+![png](https://github.com/FrancescoSaverioZuppichini/DropBlock/blob/main/images/output_4_1.png?raw=true)
     
 
 
@@ -117,11 +117,11 @@ On the left, we have the feature map's activations, on the right the activations
 
 DropBlock solves this problem by dropping continuous regions from a feature map, the following figure shows the main idea.
 
-![img](./images/1?raw=true)
+![img](./images/1.png?raw=true)
 
 Dropblock works as follow
 
-![img](./images/2?raw=true)
+![img](./images/2.png?raw=true)
 
 Let's go step by step
 
@@ -286,7 +286,7 @@ axs[1].imshow(x_drop[0,:,:].squeeze().numpy())
 
 
     
-![png](https://github.com/FrancescoSaverioZuppichini/DropBlock/blob/main/images/output_16_1?raw=true)
+![png](https://github.com/FrancescoSaverioZuppichini/DropBlock/blob/main/images/output_16_1.png?raw=true)
     
 
 
@@ -320,7 +320,7 @@ axs[1].imshow(f_drop_l.squeeze().numpy())
 
 
     
-![png](https://github.com/FrancescoSaverioZuppichini/DropBlock/blob/main/images/output_18_1?raw=true?raw=true)
+![png](https://github.com/FrancescoSaverioZuppichini/DropBlock/blob/main/images/output_18_1.png?raw=true)
     
 
 
