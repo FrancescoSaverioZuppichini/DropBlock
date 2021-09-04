@@ -8,7 +8,7 @@ Ghiasi et al. introduce [DropBlock](https://arxiv.org/abs/1810.12890), a regular
 <!-- This is an **old paper**, but I think it is very interesting to show off the thinking behind it and how to implement it. -->
 
 ## The problem with Dropout on images
-[Dropout](https://jmlr.org/papers/v15/srivastava14a.html) is a regularization technique that randomly drops (set to zeros) parts of the input before passing it to the next layer. If you are not familiar with it, I suggest the [this](https://cs231n.github.io/neural-networks-2/) lecture notes from Standford (jump to the dropout section).
+[Dropout](https://jmlr.org/papers/v15/srivastava14a.html) is a regularization technique that randomly drops (set to zeros) parts of the input before passing it to the next layer. If you are not familiar with it, I recommend [this](https://cs231n.github.io/neural-networks-2/) lecture notes from Standford (jump to the dropout section).
 
 Dropout is already in PyTorch.
 
@@ -30,14 +30,6 @@ fig, axs = plt.subplots(1, 2)
 axs[0].imshow(to_plot(x), cmap='gray')
 axs[1].imshow(to_plot(x_drop), cmap='gray')
 ```
-
-
-
-
-    <matplotlib.image.AxesImage at 0x7f5e2a990b20>
-
-
-
 
     
 ![png](https://github.com/FrancescoSaverioZuppichini/DropBlock/blob/main/images/output_1_1.png?raw=true)
@@ -100,12 +92,6 @@ axs[1].imshow(f_drop_l.squeeze().numpy())
 
 
 
-
-    <matplotlib.image.AxesImage at 0x7f5e1c0e33a0>
-
-
-
-
     
 ![png](https://github.com/FrancescoSaverioZuppichini/DropBlock/blob/main/images/output_4_1.png?raw=true)
     
@@ -117,11 +103,11 @@ On the left, we have the feature map's activations, on the right the activations
 
 DropBlock solves this problem by dropping continuous regions from a feature map, the following figure shows the main idea.
 
-![img](./images/1.png?raw=true)
+![img](https://github.com/FrancescoSaverioZuppichini/DropBlock/blob/main/images/1.png?raw=true)
 
 Dropblock works as follow
 
-![img](./images/2.png?raw=true)
+![img](https://github.com/FrancescoSaverioZuppichini/DropBlock/blob/main/images/2.png?raw=true)
 
 Let's go step by step
 
@@ -152,9 +138,7 @@ Gamma is computed using
 \gamma=\frac{1-\text { keep_prob }}{\text { block_size }^{2}} \frac{\text { feat_size }^{2}}{(\text { feat_size }-\text { block_size }+1)^{2}}
 \end{equation}
 
-The first part is the number of units that will be set to zero.
-
-The second part is the valid region, the number of pixels not touched by dropblock
+The left-hand side of the multiplication is the number of units that will be set to zero. While the right-hand side is the valid region, the number of pixels not touched by dropblock
 
 
 
@@ -324,7 +308,7 @@ axs[1].imshow(f_drop_l.squeeze().numpy())
     
 
 
-As you can see, we sucessuflly zero out continuous regions and not only individual unit.
+We successfully zero out continuous regions and not only individual units.
 
 By the way, `DropBlock` is equal to `Dropout` when `block_size = 1` and to `Dropout2d`(aka SpatialDropout) when `block_size` is the full feature map. 
 
