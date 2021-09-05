@@ -3,15 +3,11 @@
 DropBlock is available on [glasses](https://github.com/FrancescoSaverioZuppichini/glasses) my computer vision library!
 
 ## Introduction
-Ghiasi et al. introduce [DropBlock](https://arxiv.org/abs/1810.12890), a regularization technique specifical crafter for images that empirically works better than Dropout. 
+Today we are going to implement DropBlock in PyTorch! [DropBlock](https://arxiv.org/abs/1810.12890) introduced by Ghiasi et al is a regularization technique specifical crafter for images that empirically works better than Dropout. By why Dropout is not sufficient? 
 
-<!-- This is an **old paper**, but I think it is very interesting to show off the thinking behind it and how to implement it. -->
 
-## The problem with Dropout on images
-[Dropout](https://jmlr.org/papers/v15/srivastava14a.html) is a regularization technique that randomly drops (set to zeros) parts of the input before passing it to the next layer. If you are not familiar with it, I recommend [this](https://cs231n.github.io/neural-networks-2/) lecture notes from Standford (jump to the dropout section).
-
-Dropout is already in PyTorch.
-
+### The problem with Dropout on images
+[Dropout](https://jmlr.org/papers/v15/srivastava14a.html) is a regularization method that randomly drops (set to zeros) parts of the input before passing it to the next layer. If you are not familiar with it, I suggest the [this](https://cs231n.github.io/neural-networks-2/) lecture notes from Standford (jump to the dropout section). If we want to use it in PyTorch, we can directly import it from the library. Let's see an example!
 
 ```python
 import torch
@@ -314,7 +310,14 @@ By the way, `DropBlock` is equal to `Dropout` when `block_size = 1` and to `Drop
 
 
 ## Conclusions
-Today we have seen how to implement DropBlock in PyTorch, a cool regularization technique. 
+Now we know how to implement DropBlock in PyTorch, a cool regularization technique. The paper shows different empirical results. They first use a vanilla resnet50 and iterativaly add different regularization, this is shown in the following table
+
+
+![png](https://github.com/FrancescoSaverioZuppichini/DropBlock/blob/main/images/resnet50.png?raw=true)
+
+As you can see, `ResNet-50 + DropBlock` archieves + 1% compared by SpatialDropout (the classic `Dropout2d` in PyTorch).
+
+There more tests using different `p` and `block_sizes`, if you are interested go and have a look at the [paper](https://arxiv.org/pdf/1810.12890.pdf)
 
 Thank you for reading!
 
