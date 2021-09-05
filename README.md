@@ -310,14 +310,14 @@ By the way, `DropBlock` is equal to `Dropout` when `block_size = 1` and to `Drop
 
 
 ## Conclusions
-Now we know how to implement DropBlock in PyTorch, a cool regularization technique. The paper shows different empirical results. They first use a vanilla resnet50 and iterativaly add different regularization, this is shown in the following table
+Now we know how to implement DropBlock in PyTorch, a cool regularization technique. The paper shows different empirical results. They first use a vanilla resnet50 and iteratively add different regularization, this is shown in the following table
 
 
 ![png](https://github.com/FrancescoSaverioZuppichini/DropBlock/blob/main/images/resnet50.png?raw=true)
 
-As you can see, `ResNet-50 + DropBlock` archieves + 1% compared by SpatialDropout (the classic `Dropout2d` in PyTorch).
+As you can see, `ResNet-50 + DropBlock` archives + 1% compared by SpatialDropout (the classic `Dropout2d` in PyTorch).
 
-There more tests using different `p` and `block_sizes`, if you are interested go and have a look at the [paper](https://arxiv.org/pdf/1810.12890.pdf)
+In the [paper](https://arxiv.org/pdf/1810.12890.pdf) there are more studies with different DropBlock's hyperparameters, if you are interested have a look :)
 
 Thank you for reading!
 
