@@ -93,7 +93,7 @@ axs[1].imshow(f_drop_l.squeeze().numpy())
     
 
 
-On the left, we have the feature map's activations, on the right the activations of the same feature map after dropout. They look very similar, notice how in each region, even if some units are zero, neighbors activation is still firing. This means, information will be propagated to the next layer, that's not ideal.
+On the left, we have the feature map's activations, on the right the activations of the same feature map after dropout. They look very similar, notice how in each region, even if some units are zero, neighbors' activation is still firing. This means, information will be propagated to the next layer, that's not ideal.
 
 ## DropBlock
 
